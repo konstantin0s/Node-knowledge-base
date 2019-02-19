@@ -6,31 +6,10 @@ const app = express();
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + 'public')));
 
 app.get('/', function(req, res) {
-  let articles = [
- {
-  id: 1,
-  title: 'Article One',
-  author: 'Je je',
-  body: "Thsi is article one"
- },
- {
-  id: 2,
-  title: 'Article One',
-  author: 'Parle ',
-  body: "Thsi is article one"
- },
- {
-  id: 3,
-  title: 'Article One',
-  author: 'France',
-  body: "Thsi is article one"
- }
-  ];
-res.render('index',
-{articles: articles});
+res.render('index');
 });
 
 //add route
