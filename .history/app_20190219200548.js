@@ -14,7 +14,7 @@ res.render('index');
 
 //add route
 app.get('/articles/add', function(req, res) {
-  res.render('add_article');
+  res.render('/articles/add');
   });
 
 app.listen(3000, function() {

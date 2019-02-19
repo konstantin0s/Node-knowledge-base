@@ -12,11 +12,6 @@ app.get('/', function(req, res) {
 res.render('index');
 });
 
-//add route
-app.get('/articles/add', function(req, res) {
-  res.render('add_article');
-  });
-
 app.listen(3000, function() {
   console.log('Server started on port 3000');
 })
