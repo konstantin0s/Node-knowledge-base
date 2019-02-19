@@ -1,0 +1,22 @@
+{
+  "name": "articles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konstantin0s/Node-knowledge-base.git"
+  },
+  "author": "Constantin Tofan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konstantin0s/Node-knowledge-base/issues"
+  },
+  "homepage": "https://github.com/konstantin0s/Node-knowledge-base#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
