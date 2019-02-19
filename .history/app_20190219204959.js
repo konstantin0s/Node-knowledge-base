@@ -3,7 +3,6 @@ const hbs     = require('hbs');
 const path    = require('path');
 const mongoose = require('mongoose');
 
-
 mongoose.connect('mongodb://localhost/nodekb');
 let db = mongoose.connection;
 
@@ -18,23 +17,13 @@ db.on('error', function(err) {
 
 const app = express();
 
-//bring in models
-let Article = require('./models/article');
-
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  Article.find({}, function(err, articles) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('index',
-      {articles: articles});
-    }
-    
-  });
+res.render('index',
+{articles: articles});
 });
 
 //add route

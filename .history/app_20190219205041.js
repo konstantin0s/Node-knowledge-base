@@ -26,15 +26,8 @@ app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
-  Article.find({}, function(err, articles) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('index',
-      {articles: articles});
-    }
-    
-  });
+res.render('index',
+{articles: articles});
 });
 
 //add route
