@@ -18,6 +18,7 @@
   "homepage": "https://github.com/konstantin0s/Node-knowledge-base#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "hbs": "^4.0.2"
+    "hbs": "^4.0.2",
+    "mongoose": "^5.4.14"
   }
 }
