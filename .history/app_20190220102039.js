@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use(bodyParser.json());
+app.use(bodyParser.json);
 
 app.get('/', function(req, res) {
   Article.find({}, function(err, articles) {
@@ -53,15 +53,6 @@ app.get('/articles/add', function(req, res) {
    article.title = req.body.title;
    article.author = req.body.author;
    article.body = req.body.body;
-
-   article.save(function(err) {
-        if (err) {
-          console.log(err);
-          return;
-        } else {
-          res.redirect('/');
-        }
-   });
   });
 
 app.listen(3000, function() {

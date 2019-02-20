@@ -54,14 +54,14 @@ app.get('/articles/add', function(req, res) {
    article.author = req.body.author;
    article.body = req.body.body;
 
-   article.save(function(err) {
-        if (err) {
-          console.log(err);
-          return;
-        } else {
-          res.redirect('/');
-        }
-   });
+  //  article.save(function(err) {
+  //       if (err) {
+  //         console.log(err);
+  //         return;
+  //       } else {
+  //         res.redirect('/');
+  //       }
+  //  });
   });
 
 app.listen(3000, function() {
