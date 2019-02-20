@@ -45,7 +45,6 @@ app.get('/articles/add', function(req, res) {
   //add submit POST route
   app.post('/articles/add', function() {
     console.log('Submitted');
-    return;
   });
 
 app.listen(3000, function() {

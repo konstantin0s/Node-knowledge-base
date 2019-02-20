@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/konstantin0s/Node-knowledge-base#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "hbs": "^4.0.2",
     "mongoose": "^5.4.14"
