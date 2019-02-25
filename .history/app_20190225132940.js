@@ -24,10 +24,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Routing
 const authRoute = require('./routes/auth');
-const articleRoute = require('./routes/article');
+const articleRoute = require('./routes/article')
 app.use('/auth', authRoute);
-app.use('/', articleRoute);
-
+app.use('/', articleRoute)
 
 
 

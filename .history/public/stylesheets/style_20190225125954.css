@@ -28,8 +28,7 @@ body {
 
 
   #form {
-    position: relative;
-    top: 20px;
+    top: 100px;
     margin: 30px auto;
     width: 380px;
   }
@@ -71,18 +70,4 @@ body {
     background: #fff;
     color: #43a3e6;
     transition: .3s ease background;
-  }
-
-  #nav {
-    position: relative;
-    top: 20px;
-  }
-
-  .error-message {
-    background: #F02B63;
-    box-sizing: border-box;
-    color: #fff;
-    margin: 20px auto;
-    padding: 20px;
-    width: 100%;
-  }
+  

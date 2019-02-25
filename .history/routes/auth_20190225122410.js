@@ -19,12 +19,10 @@ router.get("/signup", (req, res, next) => {
 const bcrypt         = require("bcrypt");
 const bcryptSalt     = 10;
 
-// router.post('/signup', (req, res) => {
-//   console.log(req.body)
-//   res.send('routerpost works')
-// })
-router.post("/signup", (req, res) => {
-  // console.log("reqbody", req.body)
+
+router.post("/signup", (req, res, next) => {
+  console.log("reqbody", req.body)
+  debugger
   const username = req.body.username;
   const password = req.body.password;
   const salt     = bcrypt.genSaltSync(bcryptSalt);
@@ -35,20 +33,12 @@ router.post("/signup", (req, res) => {
     password: hashPass
   })
   .then(() => {
-    if (username === "" || password === "") {
-      res.render("auth/signup", {
-        errorMessage: "Indicate a username and a password to sign up"
-      });
-      return;
-    }
     res.redirect("/");
   })
   .catch(error => {
     console.log(error);
   })
 });
-
-
 
 
 module.exports = router;

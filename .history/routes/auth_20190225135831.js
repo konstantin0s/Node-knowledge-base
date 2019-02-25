@@ -35,20 +35,12 @@ router.post("/signup", (req, res) => {
     password: hashPass
   })
   .then(() => {
-    if (username === "" || password === "") {
-      res.render("auth/signup", {
-        errorMessage: "Indicate a username and a password to sign up"
-      });
-      return;
-    }
     res.redirect("/");
   })
   .catch(error => {
     console.log(error);
   })
 });
-
-
 
 
 module.exports = router;

@@ -29,7 +29,7 @@ body {
 
   #form {
     position: relative;
-    top: 20px;
+    top: 200px;
     margin: 30px auto;
     width: 380px;
   }
@@ -73,16 +73,6 @@ body {
     transition: .3s ease background;
   }
 
-  #nav {
-    position: relative;
-    top: 20px;
-  }
-
-  .error-message {
-    background: #F02B63;
-    box-sizing: border-box;
-    color: #fff;
-    margin: 20px auto;
-    padding: 20px;
-    width: 100%;
+  .navbar-expand-md {
+    margin-bottom: 100px;
   }

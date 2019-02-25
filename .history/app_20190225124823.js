@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/nodekb', { useNewUrlParser: true })
 
 
 app.set('view engine', 'hbs');
-app.set('views', __dirname + '/views', '/views/auth');
+app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -23,11 +23,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 
 // Routing
-const authRoute = require('./routes/auth');
-const articleRoute = require('./routes/article');
-app.use('/auth', authRoute);
-app.use('/', articleRoute);
-
+const routeAuth = require('./routes/auth');
+const articleRoute = require('./routes/article')
+app.use('/', routeAuth);
+app.use('/article', articleRoute)
 
 
 
