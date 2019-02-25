@@ -78,7 +78,7 @@ app.get('/articles/add', function(req, res) {
   })
 
   app.get('/search-article', (req, res) => {
-   let searchQuery =  req.query.articles;
+   let searchQuery =  req.query.article;
    Article.find({name: searchQuery}, function(err, articles) {
     if (err) {
       console.log(err);

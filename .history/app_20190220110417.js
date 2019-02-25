@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 
-mongoose.connect('mongodb://localhost/nodekb', { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/nodekb');
 let db = mongoose.connection;
 
 //check connection
@@ -71,23 +71,6 @@ app.get('/articles/add', function(req, res) {
         }
    });
   });
-
-  //route for search
-  app.get('/search', (req, res) => {
-    res.render('search')
-  })
-
-  app.get('/search-article', (req, res) => {
-   let searchQuery =  req.query.articles;
-   Article.find({name: searchQuery}, function(err, articles) {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('index',
-      {articles: articles});
-    }
-  })
-  })
 
 app.listen(3000, function() {
   console.log('Server started on port 3000');

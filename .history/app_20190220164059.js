@@ -78,15 +78,14 @@ app.get('/articles/add', function(req, res) {
   })
 
   app.get('/search-article', (req, res) => {
-   let searchQuery =  req.query.articles;
-   Article.find({name: searchQuery}, function(err, articles) {
+   let searchQuery =  req.query.article;
+   Article.find({searchQuery}, function(err, articles) {
     if (err) {
       console.log(err);
     } else {
       res.render('index',
       {articles: articles});
     }
-  })
   })
 
 app.listen(3000, function() {

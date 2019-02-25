@@ -2,7 +2,7 @@ body {
   background-color: azure;
   padding: 0;
   margin: 0;
-  overflow-x: scroll;
+  height: 100%;
 }
 
 .footer {
@@ -20,8 +20,5 @@ body {
   }
 
   .container {
-    position: relative;
-    top: 150px;
-    height: 100%;
-    padding-bottom: 150px;
+    top: 50px;
   }
