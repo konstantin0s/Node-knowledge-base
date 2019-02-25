@@ -28,13 +28,6 @@ router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  if (username == "" || password == "") {
-    res.render("auth/signup", {
-      errorMessage: "Indicate a username and a password to sign up"
-    });
-    return;
-  }
-
   User.findOne({"username": username})
   .then(user => {
     if (user !== null) {
@@ -43,7 +36,7 @@ router.post("/signup", (req, res, next) => {
       });
       return;
     }
-
+  })
 
   const salt     = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
@@ -53,9 +46,14 @@ router.post("/signup", (req, res, next) => {
     password: hashPass
   })
   .then(() => {
+    if (username === "" || password === "") {
+      res.render("auth/signup", {
+        errorMessage: "Indicate a username and a password to sign up"
+      });
+      return;
+    }
     res.redirect("/");
   })
-})
   .catch(error => {
     next(error);
   })
